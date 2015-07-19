@@ -1,0 +1,14 @@
+{% extends 'base_site.html' %}
+
+{% block body %}
+
+{% if all_posts %}
+<h3>Alle nyheder:</h3>
+    {% for post in all_posts %}
+    <p>{{ post.posted.date }}: <a href="{% url 'detail' post.id %}">{{ post.title }}</a></p>
+    {% endfor %}
+{% else %}
+<p>No news!</p>
+{% endif %}
+
+{% endblock %}

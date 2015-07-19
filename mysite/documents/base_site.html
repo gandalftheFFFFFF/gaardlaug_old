@@ -1,0 +1,42 @@
+<!-- base_site.html -->
+
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+	<title>{% block page_title %}Niels' blog{% endblock %}</title>
+</head>
+<body>
+
+
+<div id="frame">
+	<div class="header">
+	gaardlauget-christianshavn
+	</div>
+	<div class="menu">
+		<div class="menu_item"><a href="{% url 'index' %}">home</a></div>
+		<div class="menu_item"><a href="docs.html">documents</a></div>
+		<div class="menu_item"><a href="bestyrelse.html">bestyrelse</a></div>
+		<div class="menu_item"><a href="affald.html">affald</a></div>
+		<div class="menu_item"><a href="{% url 'guestbook' %}">guestbook</a></div>
+	</div>
+	<div class="main">
+	{% block body %}
+
+	{% endblock %}
+	</div>
+	<div class="footer">
+	niels pedersen @ penguware
+	</div>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,44 @@
+{% extends "base_site.html" %}
+
+
+{% block body %}
+
+{% block docs_menu %}
+<div id="docs_menu">
+    <div class="docs_menu_item">
+        <a href="regnskab/">Regnskab & Budget</a>
+    </div>
+    <div class="docs_menu_item">
+        <a href="referat/">Referater</a>
+    </div>
+    <div class="docs_menu_item">
+        <a href="andet/">Andet</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block docs_body %}
+
+<h3>Nyeste dokumenter:</h3>
+{% if documents %}
+
+<ul>
+
+    {% for document in documents %}
+    <li>
+        <a href="{{ MEDIA_URL }}{{ document.doc.url }}">{{ document.file_name }}</a>
+    </li>
+    {% endfor %}
+
+</ul>
+
+{% else %}
+
+    <p>No documents available!</p>
+
+{% endif %}
+
+{% endblock %}
+
+
+{% endblock %}

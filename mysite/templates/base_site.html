@@ -1,0 +1,42 @@
+<!-- base_site.html -->
+
+<html>
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+	<title>{% block page_title %}Niels' blog{% endblock %}</title>
+</head>
+<body>
+
+
+<div id="frame">
+	<div class="header">
+		<a href="{% url 'index' %}">gaardlauget-christianshavn</a>
+	</div>
+	<div class="menu">
+		<div class="menu_item"><a href="{% url 'news' %}">nyheder</a></div>
+		<div class="menu_item"><a href="{% url 'uploads' %}">dokumenter</a></div>
+		<div class="menu_item"><a href="{% url 'board' %}">bestyrelse</a></div>
+		<div class="menu_item"><a href="{% url 'affald' %}">affald</a></div>
+		<div class="menu_item"><a href="{% url 'guestbook' %}">gæstebog</a></div>
+	</div>
+	<div class="main">
+		<hr />
+		{% block body %}
+		{% endblock %}
+	</div>
+	<div class="footer">
+	niels pedersen @ nscp software
+	</div>
+</div>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

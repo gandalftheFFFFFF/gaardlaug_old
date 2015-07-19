@@ -1,0 +1,38 @@
+<!-- blog post details -->
+
+{% extends "base_site.html" %}
+
+{% block body %}
+
+<p><a href="{% url 'news' %}">Tilbage til nyheder</a></p>
+
+<p>{{ post.posted|date:"Y.m.d - G:m" }}</p>
+<h1>{{ post.title }}</h1>
+<p>{{ post.body }}</p>
+{% if documents %}
+    {% if documents > 1 %}
+        <p class="italic">Uploadede dokumenter:</p>
+    {% else %}
+        <p class="italic">Uploadet dokument:</p>
+    {% endif %}
+    <ul>
+        {% for document in documents %}
+        <li>
+            <a href="{{ MEDIA_URL }}{{ document.doc.url }}">{{ document.file_name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% if images %}
+{% if images > 1 %}
+    <p class="italic">Uploadede billeder:</p>
+{% else %}
+    <p class="italic">Uploadet billede:</p>
+{% endif %}
+{% for image in images %}
+<a href="{{ MEDIA_URL }}{{ image.image.url }}"><img src="{{ MEDIA_URL }}{{ image.image.url }}" class="image_thumbnail"></a>
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}

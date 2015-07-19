@@ -1,0 +1,40 @@
+{% extends "base_site.html" %}
+
+
+{% block body %}
+
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form_cell">
+        <label>Name: </label>
+    </div>
+    <div class="form_cell">
+        {{ form.name }}
+    </div>
+    <div class="form_cell">
+        <label>Message: </label>
+    </div>
+    <div class="form_cell">
+        {{ form.message }}
+    </div>
+    <div class="form_cell">
+        <input type="submit" value="Submit" />
+    </div>
+
+</form>
+
+{% if messages %}
+<p><strong>Comments:</strong></p>
+
+{% for message in messages %}
+
+<p><strong>From:</strong> {{ message.name }} ({{ message.posted|date:"Y.m.d - G:i" }})</p>
+<p>{{ message.message }}</p>
+
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

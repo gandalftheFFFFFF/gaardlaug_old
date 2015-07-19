@@ -1,0 +1,131 @@
+body {
+	background-color: white;
+	font-family: Helvetica, sans-serif;
+	margin: 10px 10px 10px 10px;
+	padding: 0px;
+}
+
+div.form_cell {
+	margin: 5px;
+	width: 100%;
+	float: left;
+}
+
+#id_message {
+	width: 98%;
+}
+
+p {
+	margin: 9px 5px 5px 5px;
+}
+
+p.italic {
+	font-style: italic;
+}
+
+img {
+	margin: 9px 5px 5px 5px;
+}
+
+h1, h2, h3 {
+	margin: 9px 5px 5px 5px;
+}
+
+hr {
+	width: 75%;
+	float: center;
+}
+
+a:link {
+	color: brown;
+	text-decoration:none;
+}
+
+a:visited {
+	color: brown;
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+	color: brown;
+}
+
+div.header a:link {
+	color: white;
+}
+
+div.header a:visited {
+	color: white;
+}
+
+div.header a:active {
+	color: white;
+}
+
+#frame {
+	width: 500px;
+	margin: 0 auto;
+	background-color: #BDD7D0;
+	padding: 10px 10px 10px 10px;
+	border-radius:10px;
+}
+
+div.header {
+	display: block;
+	height: 100px;
+	font-weight: bold;
+	line-height: 100px;
+	text-align: center;
+	color: black;
+	font-family: courier;
+}
+
+div.menu {
+	text-align: center;
+	position: relative;
+}
+
+div.menu_item {
+	display: inline-block;
+	position: relative;
+	margin: 0px 5px 0px 5px;
+	font-weight: bold;
+	color: white;
+	padding: 5px 5px 5px 5px;
+}
+
+div.main {
+	!background-color: #BDD7D0;
+	padding: 9px 0px 9px 0px;
+}
+
+div.footer {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	font-family: courier;
+}
+
+#docs_menu {
+	!background-color: white;
+	margin: 0px 5px 5px 5px;
+	padding: 5px 5px 5px 5px;
+	text-align:center;
+}
+
+div.docs_menu_item {
+	background-color: white;
+	margin: 0 auto;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+
+img.image_thumbnail {
+	border: 2px solid black;
+	height: 100px;
+	width: auto;
+}

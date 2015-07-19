@@ -1,0 +1,39 @@
+{% extends 'base_site.html' %}
+
+{% block body %}
+
+{% if board_members %}
+<p style="text-align: center"><strong>Bestyrelsen</strong></p>
+<ul>
+    {% for member in board_members %}
+    <li>
+        {{ member.first_name }} {{ member.last_name }}
+
+            {% for role in roles %}
+                {% if role.board_member == member %}
+                    ({{ role.role }})
+                {% endif %}
+            {% endfor %}
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>There are currently no active board members on the board...</p>
+{% endif %}
+
+{% if cadastres %}
+<p style="text-align: center"><strong>Ejendomme</strong></p>
+<p style="text-align: center">(Ejerlauget matr. nr. 526 m.fl. Christianshavn)</p>
+<ul>
+    {% for cadastre in cadastres %}
+    <li>
+        {{ cadastre }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}

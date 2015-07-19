@@ -1,0 +1,23 @@
+{% extends 'documents.html' %}
+
+{% block docs_menu %}
+<div id="docs_menu">
+    <div class="docs_menu_item">
+        <a href="{% url 'uploads' %}">tilbage</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block docs_body %}
+
+{% if docs %}
+    <ul>
+        {% for doc in docs %}
+        <li><a href="{{ MEDIA_URL }}{{ doc.doc.url}}">{{ doc.file_name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No documents under this category :(</p>
+{% endif %}
+
+{% endblock %}
