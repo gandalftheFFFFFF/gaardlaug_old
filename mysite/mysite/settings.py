@@ -44,7 +44,7 @@ def get_secret(setting, default=None, required=True, secrets=secrets):
         error_msg = "Set the {0} variable in secrets.json".format(setting)
 
 
-SECRET_KEY = 'f!r0d3*otypr^r-+w=ao)3s@9av7+r_h*urd8f0k1o1g!6pue-'
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -104,14 +104,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': get_secret('DATABASE_PASSWORD'),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
