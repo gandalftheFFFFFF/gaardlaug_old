@@ -20,6 +20,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
+# importing secrets
+import json
+from django.core.exceptions import ImproperlyConfigured
+try:
+    with open(os.path.join(os.path.dirname(__file__), "secrets.json")) as f:
+        secrets = json.loads(f.read())
+except IOError:
+    raise ImproperlyConfigured("Unable to open secrets file. Make sure you ahve a file called secrets.json in the settings folder.")
+
+
+def get_secret(setting, default=None, required=True, secrets=secrets):
+    """  Get secrets from secrets.json file   """
+    try:
+        return secrets[setting]
+    except KeyError:
+        if default:
+            return default
+        if not required:
+            return None
+        error_msg = "Set the {0} variable in secrets.json".format(setting)
+
+
 SECRET_KEY = 'f!r0d3*otypr^r-+w=ao)3s@9av7+r_h*urd8f0k1o1g!6pue-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
