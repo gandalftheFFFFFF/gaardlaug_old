@@ -45,6 +45,7 @@ def get_secret(setting, default=None, required=True, secrets=secrets):
 
 
 SECRET_KEY = get_secret('SECRET_KEY')
+# why is this?
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
