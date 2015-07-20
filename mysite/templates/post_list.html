@@ -5,7 +5,7 @@
 
 {% if latest_post %}
     <p><strong>Nyt:</strong></p>
-    <h3>{{ latest_post.title }} - {{ latest_post.posted|date:"Y.m.d" }}</h3>
+    <h3>{{ latest_post.title }} - {{ latest_post.posted|date:"d.m.Y" }}</h3>
     <p>{{ latest_post.body }}</p>
     {% if documents %}
         {% if documents > 1 %}
