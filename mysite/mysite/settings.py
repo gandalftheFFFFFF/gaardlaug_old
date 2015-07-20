@@ -130,5 +130,4 @@ USE_TZ = True
 try:
     from .local_settings import *
 except ImportError:
-    print('DER ER EN FEJL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-    raise
+    pass
