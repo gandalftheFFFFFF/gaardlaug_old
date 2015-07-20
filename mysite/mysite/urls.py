@@ -36,3 +36,5 @@ urlpatterns = [
     #url(r'^documents/', TemplateView.as_view(template_name='stat.html'))
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
