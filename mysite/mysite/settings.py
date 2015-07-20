@@ -47,9 +47,9 @@ def get_secret(setting, default=None, required=True, secrets=secrets):
 SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nscp.dk']
 
 
 # Application definition
@@ -127,22 +127,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_PATH = os.path.join(BASE_DIR, 'static')
-
-STATIC_URL = '/static/'
-
-STATIC_ROOT = '' #os.path.join(BASE_DIR, 'static')
-
-STATICFILES_DIRS = (
-	STATIC_PATH,
-	)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'documents')
-
-MEDIA_URL = '/documents/'
-
-DATE_FORMAT = '%d/%m/%Y'
+try:
+    from .local_settings import *
+except ImportError:
+    print('DER ER EN FEJL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    raise
