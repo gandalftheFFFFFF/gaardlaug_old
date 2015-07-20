@@ -129,11 +129,11 @@ USE_L10N = True
 USE_TZ = True
 
 # STATIC FILES
-STATIC_PATH = os.path.join(BASE_DIR, 'fake_static')
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'fake_static')
 
 STATICFILES_DIRS = (
 	STATIC_PATH,
