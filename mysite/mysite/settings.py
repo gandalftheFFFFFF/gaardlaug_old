@@ -128,6 +128,23 @@ USE_L10N = True
 
 USE_TZ = True
 
+# STATIC FILES
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = '' #os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+	STATIC_PATH,
+	)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'documents')
+
+MEDIA_URL = '/documents/'
+
+
+# IMPORT local_settings
 try:
     from .local_settings import *
 except ImportError:
