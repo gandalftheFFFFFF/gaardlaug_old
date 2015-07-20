@@ -4,8 +4,16 @@ from .models import Post, Image
 
 
 def index(request):
-	latest_post = Post.objects.latest('posted')
-	posts = Post.objects.all()[1:5]
+	try:
+		latest_post = Post.objects.latest('posted')
+	except Post.DoesNotExist:
+		latest_post = None
+
+	try:
+		posts = Post.objects.all()[1:5]
+	except Post.DoesNotExist:
+		posts = None
+
 	try:
 		images = Image.objects.filter(post=latest_post)
 	except Image.DoesNotExist:
