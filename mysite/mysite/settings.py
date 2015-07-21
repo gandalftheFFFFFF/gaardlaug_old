@@ -131,12 +131,12 @@ USE_TZ = True
 # STATIC FILES
 #STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
-#   STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = '/var/www/nscp/static/'
 
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.findes.FileSystemFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
