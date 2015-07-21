@@ -13,7 +13,7 @@ def get_upload_path(instance, filename):
 
 class Uploader(models.Model):
     file_name = models.CharField(max_length=100)
-    category = models.CharField(max_length=200, choices=UPLOAD_PATH_CHOICES, default='documents')
+    category = models.CharField(max_length=200, choices=UPLOAD_PATH_CHOICES, default='media')
     upload_date = models.DateTimeField(auto_now_add=True)
     doc = models.FileField(upload_to=get_upload_path)
     post = models.ForeignKey(Post, blank=True, null=True)

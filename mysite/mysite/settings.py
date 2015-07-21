@@ -145,9 +145,9 @@ STATICFILES_DIRS = (
 	)
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'documents')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/documents/'
+MEDIA_URL = '/media/'
 
 # IMPORT local_settings
 try:
