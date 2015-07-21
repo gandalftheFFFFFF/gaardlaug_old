@@ -1,5 +1,5 @@
 {% extends "base_site.html" %}
-
+{% load staticfiles %}
 
 {% block body %}
 
@@ -16,7 +16,7 @@
         <ul>
             {% for document in documents %}
             <li>
-                <a href="{{ MEDIA_URL }}{{ document.doc.url }}">{{ document.file_name }}</a>
+                <a href="{% static document.doc.url %}">{{ document.file_name }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -28,7 +28,7 @@
             <p class="italic">Uploadet billede:</p>
         {% endif %}
         {% for image in images %}
-        <a href="{{ MEDIA_URL }}{{ image.image.url }}"><img src="{{ MEDIA_URL }}{{ image.image.url }}" class="image_thumbnail"></a>
+        <a href="{% static image.image.url %}"><img src="{% static image.image.url %}" class="image_thumbnail"></a>
         {% endfor %}
     {% endif %}
 {% endif %}
