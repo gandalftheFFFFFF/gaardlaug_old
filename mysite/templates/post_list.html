@@ -28,7 +28,7 @@
             <p class="italic">Uploadet billede:</p>
         {% endif %}
         {% for image in images %}
-        <a href="{% static image.image.url %}"><img src="{% static image.image.url %}" class="image_thumbnail"></a>
+        <a href="{{ MEDIA_URL }}{{ image.image.url }}"><img src="{% static image.image.url %}" class="image_thumbnail"></a>
         {% endfor %}
     {% endif %}
 {% endif %}
