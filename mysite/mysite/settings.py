@@ -149,6 +149,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
+# Email settings PRODUCTION
+SERVER_EMAIL = 'niels@nscp.dk'
+DEFAULT_FROM_EMAIL = 'niels@nscp.dk'
+ADMINS = ((u'me', 'niels@nscp.dk'),)
+MANAGERS = ADMINS
+
 # IMPORT local_settings
 try:
     from .local_settings import *
