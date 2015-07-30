@@ -50,7 +50,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['46.101.237.155', 'nscp.dk', 'www.nscp.dk']
+ALLOWED_HOSTS = ['46.101.237.155', u'www.gaardlauget-christianshav.dk', u'gaardlauget-christianshavn.dk']
 
 
 # Application definition
@@ -133,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/var/www/nscp/static/'
+STATIC_ROOT = '/var/www/gaardlaug/static/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
